@@ -8,7 +8,15 @@
 
 A modern, full-stack financial data platform built with **ASP.NET Core** that ingests, processes, and visualizes stock market data with real-time analytics and interactive dashboards.
 
-## 📋 Table of Contents
+## � Live Demo
+
+| Service | URL | Status |
+|---------|-----|--------|
+| **Web Dashboard** | [https://stockdashboard.runasp.net](https://stockdashboard.runasp.net) | ✅ live |
+| **API Swagger** | [https://apistockdashboard.runasp.net/swagger](https://apistockdashboard.runasp.net/swagger) | ✅ live |
+| **User** | `Guest` | (No login required) |
+
+## �📋 Table of Contents
 
 - [Overview](#-overview)
 - [Features](#-features)

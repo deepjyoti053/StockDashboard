@@ -427,13 +427,16 @@ FodyWeavers.xsd
 # But ignore any user-generated data files
 # StockDashboard.Api/Data/*.csv  # Uncomment to ignore CSV files
 
-# Ignore any local configuration overrides
+# Ignore sensitive configuration files
+appsettings.Production.json
+appsettings.Staging.json
 appsettings.Local.json
 secrets.json
 
-# Ignore publish folders
+# Ignore publish folders and artifacts
 publish/
 PublishProfiles/
+*.zip
 
-# Project documentation and requirements (keep local only)
+# Organization - Ignore entire Requirement folder
 Requirement/

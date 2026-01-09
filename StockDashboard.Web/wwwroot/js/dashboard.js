@@ -1,5 +1,5 @@
-// Configuration - Update this if API runs on a different port
-const API_BASE_URL = 'https://localhost:7249/api';
+// Configuration - Injected from server-side appsettings
+const API_BASE_URL = window.APP_CONFIG?.API_BASE_URL || 'https://stockdashboard.runasp.net/api';
 
 let currentChart = null;
 

@@ -29,52 +29,66 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// Enable Swagger in all environments for demo purposes
+app.UseSwagger();
+app.UseSwaggerUI();
 
 // Auto-migrate and Seed on startup
 using (var scope = app.Services.CreateScope())
 {
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate();
+    // Custom File Logger for debugging
+    void Log(string message) 
+    {
+        try {
+            Console.WriteLine(message);
+            File.AppendAllText("startup_log.txt", $"{DateTime.UtcNow}: {message}\n");
+        } catch {}
+    }
 
-    try {
-        var ingestion = scope.ServiceProvider.GetRequiredService<StockIngestionService>();
+    try 
+    {
+        Log("[Startup] Starting application...");
+        var scopeProvider = scope.ServiceProvider;
+        var db = scopeProvider.GetRequiredService<AppDbContext>();
+        
+        Log("[Startup] Applying Database Migrations...");
+        db.Database.Migrate();
+        Log("[Startup] Database Migrations Applied Successfully.");
+
+        var ingestion = scopeProvider.GetRequiredService<StockIngestionService>();
         
         // Debugging Paths
         var cwd = Directory.GetCurrentDirectory();
-        Console.WriteLine($"[Seeding] Current Working Directory: {cwd}");
+        Log($"[Seeding] Current Working Directory: {cwd}");
         
         var infyPath = Path.Combine(cwd, "Data", "INFY.csv");
         var tcsPath = Path.Combine(cwd, "Data", "TCS.csv");
 
-        Console.WriteLine($"[Seeding] Looking for INFY at: {infyPath}");
+        Log($"[Seeding] Looking for INFY at: {infyPath}");
         if (File.Exists(infyPath)) 
         {
-            Console.WriteLine("[Seeding] INFY.csv found. Importing...");
+            Log("[Seeding] INFY.csv found. Importing...");
             await ingestion.ImportFromCsvAsync("INFY", "Infosys Ltd", infyPath);
         }
         else
         {
-            Console.WriteLine("[Seeding] ERROR: INFY.csv NOT FOUND.");
+            Log("[Seeding] ERROR: INFY.csv NOT FOUND.");
         }
 
         if (File.Exists(tcsPath))
         {
-             Console.WriteLine("[Seeding] TCS.csv found. Importing...");
+             Log("[Seeding] TCS.csv found. Importing...");
             await ingestion.ImportFromCsvAsync("TCS", "Tata Consultancy Services", tcsPath);
         }
         else
         {
-            Console.WriteLine("[Seeding] ERROR: TCS.csv NOT FOUND.");
+            Log("[Seeding] ERROR: TCS.csv NOT FOUND.");
         }
+        Log("[Seeding] Framework initialization complete.");
 
     } catch (Exception ex) {
-        Console.WriteLine($"[Seeding] FATAL ERROR: {ex.Message}");
-        Console.WriteLine(ex.StackTrace);
+        Log($"[Startup] FATAL ERROR during Migration/Seeding: {ex.Message}");
+        Log(ex.StackTrace);
     }
 }
 

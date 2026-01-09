@@ -1,0 +1,11 @@
+@inject IConfiguration Configuration
+@{
+    var apiBaseUrl = Configuration["ApiSettings:BaseUrl"] ?? "https://stockdashboard.runasp.net/api";
+}
+
+<script>
+    // API configuration injected from server
+    window.APP_CONFIG = {
+        API_BASE_URL: '@apiBaseUrl'
+    };
+</script>
