@@ -12,8 +12,8 @@ A modern, full-stack financial data platform built with **ASP.NET Core** that in
 
 | Service | URL | Status |
 |---------|-----|--------|
-| **Web Dashboard** | <a href="https://stockdashboard.runasp.net" target="_blank">https://stockdashboard.runasp.net</a> | ✅ live |
-| **API Swagger** | <a href="https://apistockdashboard.runasp.net/swagger" target="_blank">https://apistockdashboard.runasp.net/swagger</a> | ✅ live |
+| **Web Dashboard** | [https://stockdashboard.runasp.net](https://stockdashboard.runasp.net) | ✅ live |
+| **API Swagger** | [https://apistockdashboard.runasp.net/swagger](https://apistockdashboard.runasp.net/swagger) | ✅ live |
 | **User** | `Guest` | (No login required) |
 
 ## 📋 Table of Contents
@@ -909,8 +909,8 @@ SOFTWARE.
 
 ## 👨‍💻 Author
 
-- GitHub: <a href="https://github.com/deepjyoti053" target="_blank">deepjyoti053</a>
-- LinkedIn: <a href="https://www.linkedin.com/in/deep-jyoti-971512176" target="_blank">deep-jyoti-971512176</a>
+- GitHub: [deepjyoti053](https://github.com/deepjyoti053)
+- LinkedIn: [deep-jyoti-971512176](https://www.linkedin.com/in/deep-jyoti-971512176)
 - Email: deepjyoti053@gmail.com
 
 ## 🙏 Acknowledgments
