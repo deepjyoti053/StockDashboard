@@ -1,0 +1,72 @@
+@{
+    ViewData["Title"] = "Market Overview";
+}
+
+<div class="text-center mb-4">
+    <h1 class="display-4">Stock Market Intelligence</h1>
+    <p class="lead">Select a company to view performance analytics</p>
+</div>
+
+<div class="row">
+    <!-- Company List -->
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Companies</h5>
+            </div>
+            <div class="list-group list-group-flush" id="company-list" style="max-height: 600px; overflow-y: auto;">
+                <div class="text-center p-3">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart & Summary Area -->
+    <div class="col-md-9">
+        
+        <!-- Summary Cards -->
+        <div class="row mb-3" id="summary-section" style="display:none;">
+            <div class="col-md-4">
+                <div class="card text-center text-white bg-success mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">52-Week High</h5>
+                        <p class="card-text fs-4" id="stat-high">--</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center text-white bg-danger mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">52-Week Low</h5>
+                        <p class="card-text fs-4" id="stat-low">--</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center text-white bg-info mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Avg Close</h5>
+                        <p class="card-text fs-4" id="stat-avg">--</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="card shadow-sm">
+            <div class="card-header">
+                <h5 class="mb-0" id="chart-title">Stock Price History</h5>
+            </div>
+            <div class="card-body">
+                <canvas id="stockChart" width="800" height="400"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/dashboard.js"></script>
+}
