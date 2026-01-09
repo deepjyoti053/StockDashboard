@@ -1,4 +1,4 @@
-# 🚀 Stock Dashboard - Financial Data Intelligence Platform
+﻿# 🚀 Stock Dashboard - Financial Data Intelligence Platform
 
 [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
 [![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-8.0-512BD4)](https://docs.microsoft.com/aspnet/core)
@@ -8,15 +8,15 @@
 
 A modern, full-stack financial data platform built with **ASP.NET Core** that ingests, processes, and visualizes stock market data with real-time analytics and interactive dashboards.
 
-## � Live Demo
+## Live Demo
 
 | Service | URL | Status |
 |---------|-----|--------|
-| **Web Dashboard** | [https://stockdashboard.runasp.net](https://stockdashboard.runasp.net) | ✅ live |
-| **API Swagger** | [https://apistockdashboard.runasp.net/swagger](https://apistockdashboard.runasp.net/swagger) | ✅ live |
+| **Web Dashboard** | <a href="https://stockdashboard.runasp.net" target="_blank">https://stockdashboard.runasp.net</a> | ✅ live |
+| **API Swagger** | <a href="https://apistockdashboard.runasp.net/swagger" target="_blank">https://apistockdashboard.runasp.net/swagger</a> | ✅ live |
 | **User** | `Guest` | (No login required) |
 
-## �📋 Table of Contents
+## 📋 Table of Contents
 
 - [Overview](#-overview)
 - [Features](#-features)
@@ -114,6 +114,7 @@ StockDashboard/
 │   │   ├── Dashboard/
 │   │   │   └── Index.cshtml    # Main dashboard view
 │   │   └── Shared/
+│   │       ├── _AppConfig.cshtml # Dynamic Config Injection
 │   │       └── _Layout.cshtml  # Layout template
 │   └── wwwroot/                # Static files
 │       ├── css/
@@ -885,7 +886,7 @@ This project is licensed under the MIT License - see below for details:
 ```
 MIT License
 
-Copyright (c) 2026 [Your Name]
+Copyright (c) 2026 Deep Jyoti
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -908,8 +909,8 @@ SOFTWARE.
 
 ## 👨‍💻 Author
 
-- GitHub: [deepjyoti053](https://github.com/deepjyoti053)
-- LinkedIn: [deep-jyoti-971512176](https://www.linkedin.com/in/deep-jyoti-971512176)
+- GitHub: <a href="https://github.com/deepjyoti053" target="_blank">deepjyoti053</a>
+- LinkedIn: <a href="https://www.linkedin.com/in/deep-jyoti-971512176" target="_blank">deep-jyoti-971512176</a>
 - Email: deepjyoti053@gmail.com
 
 ## 🙏 Acknowledgments
